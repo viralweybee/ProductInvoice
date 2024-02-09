@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        #customerName {
+            width: 200px;
+        }
+
+        .addedProduct {
+            display: flex;
+            padding: 0;
+            margin-top: 7px;
+        }
+
+        .productListContainer {
+            background-color: #EEF5FF;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .plusbutton {
+            width: 30px !important;
+            height: 30px !important;
+            margin-left: 98px;
+            cursor: pointer;
+        }
+
+        .removeclass {
+            object-fit: contain;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .addProduct {
+            background-color: #9EB8D9;
+        }
+
+        .addProductchild {
+            margin-top: 4px;
+            width: 180px;
+            height: 30px;
+        }
+
+        .commonclass {
+            /* margin-left: 15px; */
+            width: 190px;
+        }
+
+        .img {
+            display: flex;
+            justify-content: space-evenly!important;
+        }
+
+        .hide {
+            color: red;
+            display: none;
+        }
+
+        .finalamount {
+            margin-top: 50px;
+        }
+        input {
+            width: 150px;
+            height: 30px;
+        }
+        .div2{
+            margin-top: 4px;
+            display: flex;
+            gap:20px
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">BiteBliss</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../Product/Product.html">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Invoice/Invoice.html">Invoice</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <div class="container">
+        <div class="div2">
+            <div class="div1">
+                <span>Customer Name : </span>
+            </div>
+            <div class="div">
+                <input id="customerName" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="div2">
+            <div class="div1">
+                <span>Date : </span>
+            </div>
+            <div class="div">
+                <input id="date" type="date" class="form-control" disabled>
+            </div>
+        </div>
+        <div class="div2">
+            <div class="div1">
+                <span>Invoice No. </span>
+            </div>
+            <div class="div">
+                <input id="InvoiceNo" class="form-control" type="text" disabled>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container addProduct">
+        <select class="addProductchild" id="productNameSelect">
+            <option value="" selected>Select Product</option>
+
+        </select>
+        <input class="addProductchild" type="text" id="quantityInput" onkeyup="betterFunction()" placeholder="Quantity">
+        <input class="addProductchild" type="text" id="priceInput" placeholder="Price" disabled>
+        <input class="addProductchild" type="text" id="totalInput" placeholder="Total" disabled>
+        <img src="../AddButton.png" class="plusbutton" alt="">
+    </div>
+    <div class="container productListContainer">
+        <div class="container hide">Please Make Sure that all value is filled</div>
+        <!-- The added products will be appended here -->
+    </div>
+    <div class="finalamount">
+        <div class="container" id="grandTotal"> GrandTotal : --</div>
+        <div class="container" ><span id="discount">Discount : </span> <input id="discountInput" type="text"></div>
+        <div class="container" >Final Amount : <span id="finalAmount"></span></div>
+        <div class="container" id="finalAmountWords" ></div>
+    </div>
+    <br>
+    <div class="container">
+        <button id="Save" class="btn btn-success">Save</button>
+        <button id="Clear" class="btn btn-light">Clear</button>
+    </div>
+    <script src="EditInvoice.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+</html>
